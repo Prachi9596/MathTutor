@@ -1,0 +1,415 @@
+{
+  "dataset_root": "D:\\Math_Is_MathingAI\\data\\raw\\CROHME23\\TC11_CROHME23",
+  "provenance_note": "Subset directory names are recorded; this audit does not infer paper-scan provenance from pixels.",
+  "pairs": [
+    {
+      "images_dir": "IMG/train/OffHME",
+      "labels_dir": "SymLG/train/OffHME",
+      "image_count": 10000,
+      "label_count": 10000,
+      "matched_count": 10000,
+      "images_without_label_count": 0,
+      "images_without_label_examples": [],
+      "labels_without_image_count": 0,
+      "labels_without_image_examples": [],
+      "unreadable_or_malformed_label_count": 0,
+      "unreadable_or_malformed_label_examples": [],
+      "label_object_count_range": [
+        3,
+        48
+      ],
+      "symbol_vocabulary_size": 100,
+      "labels_with_latex_truth_count": 9831,
+      "labels_with_expression_truth_count": 10000,
+      "truth_source_counts": {
+        "latex_comment": 9831,
+        "bare_expression_line": 169
+      },
+      "latex_truth_examples": [
+        {
+          "image_id": "00001",
+          "truth": "$2 ^ { - 5 6 . 6 }$"
+        },
+        {
+          "image_id": "00002",
+          "truth": "$y ^ { \\prime } = - \\infty$"
+        },
+        {
+          "image_id": "00003",
+          "truth": "$( \\frac { - 7 } { \\sqrt { 1 0 } } , \\frac { 1 } { \\sqrt { 6 } } , \\frac { - 2 } { \\sqrt { 3 } } , 0 )$"
+        },
+        {
+          "image_id": "00004",
+          "truth": "$f ( x ) = | | A x - b | | ^ { 2 }$"
+        },
+        {
+          "image_id": "00005",
+          "truth": "$[ u ] [ v ] [ w ]$"
+        }
+      ],
+      "most_common_symbols": [
+        [
+          "(",
+          5617
+        ],
+        [
+          ")",
+          5617
+        ],
+        [
+          "1",
+          5589
+        ],
+        [
+          "=",
+          4922
+        ],
+        [
+          "2",
+          4919
+        ],
+        [
+          "-",
+          4769
+        ],
+        [
+          "x",
+          3399
+        ],
+        [
+          "COMMA",
+          3160
+        ],
+        [
+          "+",
+          2911
+        ],
+        [
+          "0",
+          2492
+        ],
+        [
+          "n",
+          2412
+        ],
+        [
+          "a",
+          1710
+        ],
+        [
+          "i",
+          1698
+        ],
+        [
+          "t",
+          1424
+        ],
+        [
+          "3",
+          1312
+        ],
+        [
+          "k",
+          1238
+        ],
+        [
+          "d",
+          1201
+        ],
+        [
+          "y",
+          1114
+        ],
+        [
+          "p",
+          1064
+        ],
+        [
+          "r",
+          1024
+        ],
+        [
+          "f",
+          952
+        ],
+        [
+          "m",
+          946
+        ],
+        [
+          "b",
+          927
+        ],
+        [
+          "c",
+          922
+        ],
+        [
+          "/",
+          912
+        ]
+      ],
+      "relation_types": [
+        [
+          "Right",
+          61392
+        ],
+        [
+          "Sub",
+          8770
+        ],
+        [
+          "Sup",
+          4674
+        ],
+        [
+          "Above",
+          1682
+        ],
+        [
+          "Below",
+          1663
+        ],
+        [
+          "Inside",
+          725
+        ]
+      ],
+      "image_quality": {
+        "count": 10000,
+        "readable": 10000,
+        "unreadable": [],
+        "blank_or_nearly_blank": [],
+        "blank_or_nearly_blank_count": 0,
+        "blankness_sample_size": 512,
+        "width_range": [
+          57,
+          2209
+        ],
+        "height_range": [
+          82,
+          307
+        ],
+        "source_modes": {
+          "RGB": 10000
+        },
+        "pixel_level_blankness_check": "deterministic sample; all listed image containers are verified"
+      }
+    },
+    {
+      "images_dir": "IMG/train/CROHME2019",
+      "labels_dir": "INKML/train/CROHME2019",
+      "image_count": 10979,
+      "label_count": 10979,
+      "matched_count": 10979,
+      "images_without_label_count": 0,
+      "images_without_label_examples": [],
+      "labels_without_image_count": 0,
+      "labels_without_image_examples": [],
+      "unreadable_or_malformed_label_count": 0,
+      "unreadable_or_malformed_label_examples": [],
+      "label_object_count_range": [
+        0,
+        0
+      ],
+      "symbol_vocabulary_size": 0,
+      "labels_with_latex_truth_count": 10979,
+      "labels_with_expression_truth_count": 10979,
+      "truth_source_counts": {
+        "inkml_annotation": 10979
+      },
+      "latex_truth_examples": [
+        {
+          "image_id": "001-equation000",
+          "truth": "$y = Ax + A^2$"
+        },
+        {
+          "image_id": "001-equation001",
+          "truth": "$B_n(1-x)=(-1)^n B_n(x)$"
+        },
+        {
+          "image_id": "001-equation0010",
+          "truth": "$0 < x < 1$"
+        },
+        {
+          "image_id": "001-equation0011",
+          "truth": "$A ( B + C ) = A B + A C$"
+        },
+        {
+          "image_id": "001-equation0012",
+          "truth": "$A\\times B$"
+        }
+      ],
+      "most_common_symbols": [],
+      "relation_types": [],
+      "image_quality": {
+        "count": 10979,
+        "readable": 10979,
+        "unreadable": [],
+        "blank_or_nearly_blank": [],
+        "blank_or_nearly_blank_count": 0,
+        "blankness_sample_size": 512,
+        "width_range": [
+          71,
+          2637
+        ],
+        "height_range": [
+          57,
+          1010
+        ],
+        "source_modes": {
+          "L": 9510,
+          "RGB": 1469
+        },
+        "pixel_level_blankness_check": "deterministic sample; all listed image containers are verified"
+      }
+    },
+    {
+      "images_dir": "IMG/val/CROHME2023_val",
+      "labels_dir": "INKML/val/CROHME2023_val",
+      "image_count": 555,
+      "label_count": 555,
+      "matched_count": 555,
+      "images_without_label_count": 0,
+      "images_without_label_examples": [],
+      "labels_without_image_count": 0,
+      "labels_without_image_examples": [],
+      "unreadable_or_malformed_label_count": 0,
+      "unreadable_or_malformed_label_examples": [],
+      "label_object_count_range": [
+        0,
+        0
+      ],
+      "symbol_vocabulary_size": 0,
+      "labels_with_latex_truth_count": 555,
+      "labels_with_expression_truth_count": 555,
+      "truth_source_counts": {
+        "inkml_annotation": 555
+      },
+      "latex_truth_examples": [
+        {
+          "image_id": "form_045_E353",
+          "truth": "x\\in C"
+        },
+        {
+          "image_id": "form_045_E354",
+          "truth": "Y^0 = \\frac{1}{\\sqrt 2} (r+v)"
+        },
+        {
+          "image_id": "form_045_E355",
+          "truth": "x^5, x^6, x^7, x^8,x^9"
+        },
+        {
+          "image_id": "form_045_E357",
+          "truth": "x^4 - x^8"
+        },
+        {
+          "image_id": "form_045_E359",
+          "truth": "\\pm \\sqrt{p-1}"
+        }
+      ],
+      "most_common_symbols": [],
+      "relation_types": [],
+      "image_quality": {
+        "count": 555,
+        "readable": 555,
+        "unreadable": [],
+        "blank_or_nearly_blank": [],
+        "blank_or_nearly_blank_count": 0,
+        "blankness_sample_size": 512,
+        "width_range": [
+          1720,
+          3310
+        ],
+        "height_range": [
+          250,
+          2621
+        ],
+        "source_modes": {
+          "RGB": 555
+        },
+        "pixel_level_blankness_check": "deterministic sample; all listed image containers are verified"
+      }
+    },
+    {
+      "images_dir": "IMG/test/CROHME2023_test",
+      "labels_dir": "INKML/test/CROHME2023_test",
+      "image_count": 2354,
+      "label_count": 2300,
+      "matched_count": 2300,
+      "images_without_label_count": 54,
+      "images_without_label_examples": [
+        "form_086_E688",
+        "form_087_E692",
+        "form_091_E724",
+        "form_096_E767",
+        "form_237_E1889",
+        "form_237_E1892",
+        "form_239_E1905",
+        "form_319_E2548",
+        "form_334_E2671",
+        "form_336_E2681",
+        "form_393_E3142",
+        "form_400_E3196"
+      ],
+      "labels_without_image_count": 0,
+      "labels_without_image_examples": [],
+      "unreadable_or_malformed_label_count": 0,
+      "unreadable_or_malformed_label_examples": [],
+      "label_object_count_range": [
+        0,
+        0
+      ],
+      "symbol_vocabulary_size": 0,
+      "labels_with_latex_truth_count": 2300,
+      "labels_with_expression_truth_count": 2300,
+      "truth_source_counts": {
+        "inkml_annotation": 2300
+      },
+      "latex_truth_examples": [
+        {
+          "image_id": "form_025_E193",
+          "truth": "\\cos f(0)=-\\cos f(\\pi)=\\pm 1"
+        },
+        {
+          "image_id": "form_027_E211",
+          "truth": "[\\frac{m+1}{2}]\\times[\\frac{m+1}{2}]"
+        },
+        {
+          "image_id": "form_031_E245",
+          "truth": "\\frac{1}{2!2!}"
+        },
+        {
+          "image_id": "form_045_E356",
+          "truth": "8,739 \\times {{10}^{ -2 }}"
+        },
+        {
+          "image_id": "form_046_E361",
+          "truth": "v^{(n)}_{abc_{n-1} d_{n-1}}"
+        }
+      ],
+      "most_common_symbols": [],
+      "relation_types": [],
+      "image_quality": {
+        "count": 2300,
+        "readable": 2300,
+        "unreadable": [],
+        "blank_or_nearly_blank": [],
+        "blank_or_nearly_blank_count": 0,
+        "blankness_sample_size": 512,
+        "width_range": [
+          1598,
+          3310
+        ],
+        "height_range": [
+          197,
+          2483
+        ],
+        "source_modes": {
+          "RGB": 2300
+        },
+        "pixel_level_blankness_check": "deterministic sample; all listed image containers are verified"
+      }
+    }
+  ]
+}

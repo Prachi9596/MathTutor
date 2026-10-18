@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f2ec">
+  <meta name="description" content="MathTutor is a thoughtful workspace for solving, checking, and learning mathematics.">
+  <title>MathTutor — A clearer way through maths</title>
+  <link rel="stylesheet" href="styles.css?v=calculus-multivar-plots-1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" crossorigin="anonymous" defer></script>
+  <script src="app.js?v=calculus-multivar-plots-1" defer></script>
+  <script src="recognizer.js?v=handwriting-graph-2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="MathTutor home"><span class="brand-mark">∑</span><span>MathTutor<span class="brand-period">.</span></span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation"><span></span><span></span></button>
+    <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+      <a href="#top" data-page-link="home">Home</a><a href="#workspace" data-page-link="workspace">Workspace</a><a href="#calculator" data-page-link="calculator">Calculator</a><a href="#progressTitle" data-page-link="progress">Progress</a><a href="#history" data-page-link="history">History</a><a href="#mistakes" data-page-link="mistakes">Mistakes</a>
+    </nav>
+    <a class="header-cta" href="#workspace">Open workspace <span aria-hidden="true">↘</span></a>
+  </header>
+  <main id="main">
+    <section class="hero section-wrap" aria-labelledby="heroTitle">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR MATHEMATICS WORKSPACE</p>
+        <h1 id="heroTitle">Make your working<br><em>count.</em></h1>
+        <p class="hero-intro">Solve a problem, check your answer, and keep track of the ideas you want to revisit.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#workspace">Start a question <span>↓</span></a><a class="text-link" href="#calculator">Open scientific calculator <span>→</span></a></div>
+      </div>
+      <div class="hero-art reveal" aria-label="Example of a worked algebra solution">
+        <div class="art-topline"><span>WORKED EXAMPLE / 01</span><span>ALGEBRA</span></div>
+        <div class="equation-board"><div class="equation-main"><span>2x</span><span class="operator">+</span><span>3</span><span class="operator">=</span><span>11</span></div><div class="equation-rule"></div><div class="equation-work"><span>2x = 11 − 3</span><span>x = 4</span></div><span class="board-index">01—03</span></div>
+        <div class="art-caption"><span class="caption-line"></span> Work through each step.</div><div class="art-stamp" aria-hidden="true">M<br><span>01</span></div>
+      </div>
+      <div class="hero-bottom reveal"><span>ONE PLACE FOR YOUR MATHS</span><div class="hero-stats"><div><strong>01</strong><span>Solve</span></div><div><strong>02</strong><span>Check</span></div><div><strong>03</strong><span>Learn</span></div></div><a href="#workspace" class="scroll-cue">Scroll to explore <span>↓</span></a></div>
+    </section>
+
+    <section class="workspace-section section-wrap" id="workspace" aria-labelledby="workspaceTitle">
+      <div class="section-heading reveal"><div><p class="eyebrow">THE WORKSPACE <span class="section-number">01 / 04</span></p><h2 id="workspaceTitle">A question in.<br><em>A solution out.</em></h2></div><p class="section-aside">Enter an expression or equation, inspect the worked steps, then check your own answer.</p></div>
+      <div class="workspace-grid reveal">
+        <section class="panel input-panel" aria-labelledby="inputTitle">
+          <div class="panel-heading"><div><span class="panel-kicker">QUESTION</span><h3 id="inputTitle">Write the problem</h3></div><span class="panel-count">01</span></div>
+          <div class="problem-entry-tabs" role="group" aria-label="Choose how to enter a problem"><button type="button" class="problem-entry-tab is-active" data-entry-mode="image" aria-pressed="true">Upload handwriting</button><button type="button" class="problem-entry-tab" data-entry-mode="type" aria-pressed="false">Type a problem</button></div>
+          <div id="imageProblemFlow" class="problem-entry-flow">
+          <div class="image-input-card" id="imageInputCard">
+            <div class="image-input-copy"><span class="image-input-icon" aria-hidden="true">↥</span><span><strong>Upload one handwritten problem</strong><small>PNG, JPG, or WEBP</small></span></div>
+            <input type="file" id="problemImageInput" accept="image/png,image/jpeg,image/webp" hidden>
+            <button class="image-upload-button" id="uploadProblemImage" type="button">Choose image</button>
+            <div class="image-preview" id="imagePreview" hidden><img id="problemImagePreview" alt="Uploaded maths problem reference"><div class="image-preview-meta"><span id="imageFileName"></span><button type="button" id="removeProblemImage">Remove image</button></div></div>
+          </div>
+          <button class="button button-solve recognize-button" id="recognizeButton" type="button" disabled><span>Read handwritten problem</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></button>
+          <p class="field-help recognizer-status" id="recognizerStatus" aria-live="polite"></p>
+          <label class="field-label" for="latexInput">TRANSCRIBED MATH <span>REVIEW OR EDIT</span></label>
+          <textarea id="latexInput" rows="2" spellcheck="false" placeholder="Your transcription will appear here after recognition."></textarea>
+          <div class="latex-preview" id="latexPreview" aria-live="polite"><span class="preview-empty">Live math preview</span></div>
+          <section class="latex-keypad" aria-labelledby="latexKeypadTitle">
+            <div class="latex-keypad-heading"><strong id="latexKeypadTitle">Math correction keypad</strong><span>Place the cursor in the transcription, then insert a symbol.</span></div>
+            <div class="latex-keypad-grid" role="group" aria-label="Insert math symbols into the transcription">
+              <button type="button" data-latex-insert="\sqrt{}" data-caret="6" title="Insert a square root">√</button>
+              <button type="button" data-latex-insert="\frac{}{}" data-caret="6" title="Insert a fraction">a⁄b</button>
+              <button type="button" data-latex-insert="^{}" data-caret="2" title="Insert an exponent">xⁿ</button>
+              <button type="button" data-latex-insert="_{}" data-caret="2" title="Insert a subscript">xₙ</button>
+              <button type="button" data-latex-insert="\sin()" data-caret="5" title="Insert sine">sin</button>
+              <button type="button" data-latex-insert="\cos()" data-caret="5" title="Insert cosine">cos</button>
+              <button type="button" data-latex-insert="\tan()" data-caret="5" title="Insert tangent">tan</button>
+              <button type="button" data-latex-insert="\log()" data-caret="5" title="Insert logarithm">log</button>
+              <button type="button" data-latex-insert="\ln()" data-caret="4" title="Insert natural logarithm">ln</button>
+              <button type="button" data-latex-insert="\int " title="Insert an integral">∫</button>
+              <button type="button" data-latex-insert="\frac{d}{dx}" title="Insert derivative notation">d/dx</button>
+              <button type="button" data-latex-insert="\pi " title="Insert pi">π</button>
+              <button type="button" data-latex-insert="+" title="Insert plus">+</button>
+              <button type="button" data-latex-insert="-" title="Insert minus">−</button>
+              <button type="button" data-latex-insert="\times " title="Insert multiplication">×</button>
+              <button type="button" data-latex-insert="\div " title="Insert division">÷</button>
+              <button type="button" data-latex-insert="(" title="Insert opening parenthesis">(</button>
+              <button type="button" data-latex-insert=")" title="Insert closing parenthesis">)</button>
+              <button type="button" data-latex-insert="=" title="Insert equals">=</button>
+              <button type="button" data-latex-insert="x">x</button>
+              <button type="button" data-latex-insert="y">y</button>
+              <button type="button" data-latex-insert="0">0</button>
+              <button type="button" data-latex-insert="1">1</button>
+              <button type="button" data-latex-insert="2">2</button>
+              <button type="button" data-latex-insert="3">3</button>
+              <button type="button" data-latex-insert="4">4</button>
+              <button type="button" data-latex-insert="5">5</button>
+              <button type="button" data-latex-insert="6">6</button>
+              <button type="button" data-latex-insert="7">7</button>
+              <button type="button" data-latex-insert="8">8</button>
+              <button type="button" data-latex-insert="9">9</button>
+            </div>
+          </section>
+          </div>
+          <div id="typedProblemFlow" class="problem-entry-flow" hidden>
+          <label class="field-label" for="expressionInput">PROBLEM <span>EDITABLE</span></label>
+          <div class="expression-field-wrap"><textarea id="expressionInput" rows="3" spellcheck="false" placeholder="Example: 2x + 3 = 11 or x + y = 5" aria-describedby="expressionHelp"></textarea></div>
+          <section class="expression-keypad" aria-label="Expression typing keypad">
+            <div class="expression-keypad-heading"><strong>Type a question</strong><span>Use the keypad or your keyboard.</span></div>
+            <div class="expression-keypad-tabs" role="group" aria-label="Choose keypad layout"><button type="button" class="expression-keypad-tab is-active" data-expression-mode="standard" aria-pressed="true">Standard</button><button type="button" class="expression-keypad-tab" data-expression-mode="scientific" aria-pressed="false">Scientific</button><button type="button" class="expression-keypad-tab" data-expression-mode="calculus" aria-pressed="false">Calculus</button></div>
+            <div class="expression-keypad-grid" id="expressionKeypad" role="group" aria-label="Insert symbols into the expression"></div>
+          </section>
+          <p class="field-help" id="expressionHelp">Enter an equation or expression. Choose Calculus on the keypad to differentiate or integrate it.</p>
+          <div class="sample-row"><span class="sample-label">EXAMPLES</span><button class="sample-chip" type="button" data-example="2x + 3 = 11">2x + 3 = 11</button><button class="sample-chip" type="button" data-example="x / 3 + 2 = 5">x / 3 + 2 = 5</button><button class="sample-chip" type="button" data-example="3x - 7 = 8">3x − 7 = 8</button></div>
+          </div>
+          <button class="button button-solve" id="solveButton" type="button"><span>Show worked solution</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></button>
+          <div class="input-divider"></div><p class="field-help">Check your final answer against the solution.</p>
+          <button class="button button-secondary" id="openChecker" type="button">Check my answer <span aria-hidden="true">↗</span></button>
+          <div class="practice-generator"><div><span class="panel-kicker">PERSONALIZED PRACTICE</span><strong>Try another one</strong><p id="practiceMessage">Your recent answer checks help choose a practice question.</p></div><button class="practice-generate-button" id="generatePractice" type="button">Generate question <span aria-hidden="true">↻</span></button></div>
+        </section>
+        <section class="panel result-panel" aria-labelledby="resultTitle"><div class="panel-heading"><div><span class="panel-kicker">SOLUTION</span><h3 id="resultTitle">Understand each step</h3></div><span class="panel-count">02</span></div>
+          <div class="result-state" id="resultState" aria-live="polite"><div class="empty-result-mark">∴</div><p>Your worked solution will appear here.</p></div>
+          <div class="solution-output" id="solutionOutput" hidden aria-live="polite"></div>
+          <section class="equation-plot" id="plotControls" hidden aria-labelledby="plotTitle"><div class="plot-heading"><div><span class="panel-kicker">VISUALIZE</span><h4 id="plotTitle">Graph this question</h4></div><button class="button button-secondary" id="plotButton" type="button">Plot graph</button></div><div class="plot-range-controls"><label for="plotMode">Graph type<select id="plotMode"><option value="curve">1-variable curve</option><option value="contour">2-variable contour</option></select></label><label for="plotVariable">Variable<input id="plotVariable" value="x" maxlength="1"></label><label for="plotXMin">x min<input id="plotXMin" type="number" value="-10" step="any"></label><label for="plotXMax">x max<input id="plotXMax" type="number" value="10" step="any"></label><label class="plot-y-control" for="plotYVariable" hidden>Second variable<input id="plotYVariable" value="y" maxlength="1"></label><label class="plot-y-control" for="plotYMin" hidden>y min<input id="plotYMin" type="number" value="-5" step="any"></label><label class="plot-y-control" for="plotYMax" hidden>y max<input id="plotYMax" type="number" value="5" step="any"></label></div><p class="plot-status" id="plotStatus" aria-live="polite">Plot single-variable equations or switch to a two-variable contour map.</p><div class="plot-chart-wrap" id="plotChartWrap" hidden><svg id="equationPlot" viewBox="0 0 720 390" role="img" aria-label="Graph of the entered expression"></svg><div class="plot-legend" id="plotLegend"></div></div></section>
+          <div class="workspace-actions" id="workspaceActions" hidden><button class="text-link" id="workspaceCheck" type="button">Check my answer →</button><button class="text-link" id="saveMistake" type="button">Add to mistake notebook +</button></div>
+          <section class="step-checker" aria-labelledby="stepCheckerTitle"><div><span class="panel-kicker">STUDENT MISTAKE DETECTION</span><h4 id="stepCheckerTitle">Check your working</h4><p>For one-variable linear equations, paste one equation per line or upload a photo of your steps. The checker flags the first line that changes the solution.</p></div><label for="studentWork">YOUR WORKING</label><textarea id="studentWork" rows="5" placeholder="2x + 3 = 11&#10;2x = 8&#10;x = 4"></textarea><div class="step-image-picker"><input id="studentWorkImageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden><button class="image-upload-button" id="chooseStudentWorkImage" type="button">Upload working photo</button><span id="studentWorkImageStatus" class="answer-image-status" aria-live="polite"></span><div class="answer-image-preview" id="studentWorkImagePreview" hidden><img id="studentWorkImagePreviewImg" alt="Uploaded handwritten working"><button id="removeStudentWorkImage" type="button">Remove image</button></div></div><button class="button button-secondary" id="checkStepsButton" type="button">Check steps</button><p class="step-check-feedback" id="stepCheckFeedback" aria-live="polite"></p></section>
+        </section>
+      </div>
+      <section class="calculator-section workspace-calculator" id="calculator" aria-labelledby="calculatorTitle">
+        <div class="section-heading reveal"><div><p class="eyebrow">SCIENTIFIC CALCULATOR <span class="section-number">02 / 04</span></p><h2 id="calculatorTitle">From quick sums<br>to <em>calculus.</em></h2></div><p class="section-aside">Evaluate scientific expressions, differentiate symbolically, and find supported indefinite or definite integrals.</p></div>
+        <div class="calculator-shell reveal">
+          <div class="calc-display"><div class="calc-display-top"><span id="angleMode">RAD</span><span id="calcStatus" aria-live="polite">SCIENTIFIC MODE</span></div><label for="calcInput" class="visually-hidden">Calculator expression</label><input id="calcInput" inputmode="text" autocomplete="off" spellcheck="false" placeholder="Enter an expression" value=""/><output id="calcOutput" aria-live="polite">0</output></div><section class="equation-plot calculus-plot" id="calculusPlotPanel" hidden aria-labelledby="calculusPlotTitle"><div class="plot-heading"><div><span class="panel-kicker">CALCULUS GRAPH</span><h4 id="calculusPlotTitle">Compare the function and result</h4></div><button class="button button-secondary" id="plotCalculusButton" type="button">Plot functions</button></div><div class="plot-range-controls"><label for="calculusPlotXMin">x min<input id="calculusPlotXMin" type="number" value="-10" step="any"></label><label for="calculusPlotXMax">x max<input id="calculusPlotXMax" type="number" value="10" step="any"></label></div><p class="plot-status" id="calculusPlotStatus" aria-live="polite">Plot the original function and its calculus result.</p><div class="plot-chart-wrap" id="calculusPlotChartWrap" hidden><svg id="calculusPlot" viewBox="0 0 720 390" role="img" aria-label="Graph comparing the original function and calculus result"></svg><div class="plot-legend" id="calculusPlotLegend"></div></div></section>
+          <div class="calc-modebar" role="group" aria-label="Calculator mode"><button type="button" class="calc-mode is-active" data-mode="standard">Standard</button><button type="button" class="calc-mode" data-mode="scientific">Scientific</button><button type="button" class="calc-mode" data-mode="calculus">Calculus</button><button type="button" id="angleToggle" class="calc-angle">Radians</button></div>
+          <div class="calc-calculus-controls" id="calculusControls" hidden><label>Operation<select id="calculusOperation"><option value="diff">Differentiate</option><option value="integrate">Integrate</option><option value="defint">Definite integral</option></select></label><label>Variable<input id="calcVariable" value="x" maxlength="1"></label><label class="bound-field" hidden>Lower bound<input id="calcLower" value="0"></label><label class="bound-field" hidden>Upper bound<input id="calcUpper" value="1"></label><button id="runCalculus" class="button button-primary" type="button">Calculate</button></div>
+          <div class="calc-keypad" id="calcKeypad" aria-label="Calculator keys"></div>
+          <p class="calc-note" id="calcNote">Use parentheses for function arguments, such as sin(pi/4), sqrt(16), or log(100).</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="method-section" id="method"><div class="section-wrap method-inner">
+      <div class="section-heading reveal"><div><p class="eyebrow">A BETTER STUDY RHYTHM <span class="section-number">03 / 04</span></p><h2>Understand the<br><em>why, not just what.</em></h2></div><p class="section-aside">Keep your questions and corrections together so each session builds on the last.</p></div>
+      <div class="method-steps reveal"><article class="method-step"><div class="step-top"><span>01</span><span class="step-icon step-icon-blue">∑</span></div><h3>Work it through</h3><p>See the transformations that lead from the question to its answer.</p><span class="step-rule"></span></article><article class="method-step"><div class="step-top"><span>02</span><span class="step-icon step-icon-coral">✓</span></div><h3>Check your answer</h3><p>Compare your attempt, see what needs correction, and review the solution.</p><span class="step-rule"></span></article><article class="method-step"><div class="step-top"><span>03</span><span class="step-icon step-icon-lime">↺</span></div><h3>Learn from a miss</h3><p>Save questions you got wrong and return to them when you are ready.</p><span class="step-rule"></span></article></div>
+      <div class="method-quote reveal"><span class="quote-mark">“</span><p>Good math tools show their work.<br><em>So should this one.</em></p><span class="quote-credit">PROJECT PRINCIPLE / 01</span></div>
+    </div></section>
+
+    <section class="records-section" id="history"><div class="section-wrap records-inner">
+      <section class="progress-dashboard" aria-labelledby="progressTitle"><div class="history-heading"><div><p class="eyebrow">YOUR LEARNING SNAPSHOT</p><h2 id="progressTitle">Progress <em>dashboard.</em></h2></div><span class="dashboard-caption">Based on answer checks saved in this browser</span></div><div class="dashboard-stats"><article><strong id="statAttempts">0</strong><span>Answer checks</span></article><article><strong id="statAccuracy">—</strong><span>Accuracy</span></article><article><strong id="statTopics">0</strong><span>Topics practiced</span></article><article><strong id="statWeakTopic">—</strong><span>Focus area</span></article></div><div class="progress-detail-grid"><section class="topic-progress-panel" aria-labelledby="topicProgressTitle"><h3 id="topicProgressTitle">Topic-wise progress</h3><p class="dashboard-subtitle">Accuracy and practice volume for each topic</p><div class="topic-progress" id="topicProgress" aria-live="polite"></div></section><section class="study-recommendation" id="studyRecommendation" aria-live="polite"><span class="panel-kicker">RECOMMENDED STUDY MATERIAL</span><h3 id="studyTitle">Build your study plan</h3><p id="studySummary">Answer checks will help identify topics to review.</p><div class="study-material-content" id="studyMaterialContent"></div></section></div><p class="dashboard-trend" id="dashboardTrend">Check more answers to see how your accuracy changes over time.</p></section>
+      <div class="records-grid">
+        <section class="record-panel" aria-labelledby="historyTitle"><div class="history-heading"><div><p class="eyebrow">YOUR QUESTIONS <span class="section-number">04 / 04</span></p><h2 id="historyTitle">Question <em>history.</em></h2></div><button class="clear-history" id="clearHistory" type="button">Clear <span>×</span></button></div><div class="history-list" id="historyList"><p class="history-empty">Your solved questions will appear here.</p></div></section>
+        <section class="record-panel" id="mistakes" aria-labelledby="mistakeTitle"><div class="history-heading"><div><p class="eyebrow">REVISIT & IMPROVE</p><h2 id="mistakeTitle">Mistake <em>notebook.</em></h2></div><button class="clear-history" id="clearMistakes" type="button">Clear <span>×</span></button></div><div class="mistake-filters" role="group" aria-label="Filter mistakes"><button class="mistake-filter is-active" data-filter="all">All</button><button class="mistake-filter" data-filter="unreviewed">To review</button><button class="mistake-filter" data-filter="learned">Reviewed</button></div><div class="mistake-list" id="mistakeList"><p class="history-empty">Questions you want to revisit will collect here.</p></div></section>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark">∑</span><span>MathTutor<span class="brand-period">.</span></span></a><p>A clearer way through maths.</p><a class="back-top" href="#top">Back to top ↑</a><span class="footer-copyright">COURSEWORK PROJECT · 2026</span></footer>
+
+
+  <dialog class="checker-modal" id="checkerModal" aria-labelledby="checkerTitle"><form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close answer checker">×</button></form><p class="eyebrow">ANSWER CHECKER</p><h2 id="checkerTitle">Check your final answer</h2><div class="checker-question-tools"><label class="field-label" for="checkerQuestionLatex">QUESTION TRANSCRIPTION <span>EDIT IF NEEDED</span></label><textarea id="checkerQuestionLatex" class="checker-question" rows="2" spellcheck="false" aria-label="Editable question transcription"></textarea><div class="answer-latex-preview question-latex-preview" id="checkerQuestionPreview" aria-live="polite"><span>Live question preview</span></div><details class="answer-correction-pad question-correction-pad"><summary>Question correction keypad <small>Insert at the cursor</small></summary><div class="answer-correction-grid" id="questionCorrectionGrid" role="group" aria-label="Insert math symbols into the question transcription"></div></details><button id="applyQuestionCorrection" class="button button-secondary apply-question-correction" type="button">Apply corrected question</button><div class="question-image-picker"><input id="checkerQuestionImageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden><button id="chooseCheckerQuestionImage" class="image-upload-button" type="button">Upload question photo</button><span id="checkerQuestionImageStatus" class="answer-image-status" aria-live="polite"></span><div class="answer-image-preview" id="checkerQuestionImagePreview" hidden><img id="checkerQuestionImagePreviewImg" alt="Uploaded handwritten question"><button id="removeCheckerQuestionImage" type="button">Remove image</button></div></div></div><label class="field-label" for="answerAttempt">YOUR ANSWER</label><input id="answerAttempt" class="modal-answer" placeholder="Enter a number or expression" autocomplete="off"><div class="answer-latex-preview" id="answerLatexPreview" aria-live="polite"><span>Live answer preview</span></div><details class="answer-correction-pad" open><summary>Math correction keypad <small>Insert at the cursor</small></summary><div class="answer-correction-grid" id="answerCorrectionGrid" role="group" aria-label="Insert math symbols into your answer"></div></details><div class="answer-image-picker"><input id="answerImageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden><button id="chooseAnswerImage" class="image-upload-button" type="button">Upload answer photo</button><span id="answerImageStatus" class="answer-image-status" aria-live="polite"></span><div class="answer-image-preview" id="answerImagePreview" hidden><img id="answerImagePreviewImg" alt="Uploaded handwritten final answer"><button id="removeAnswerImage" type="button">Remove image</button></div></div><p class="checker-feedback" id="checkerFeedback" aria-live="polite">Enter your final answer or upload a photo to transcribe it.</p><div class="modal-actions"><button id="submitAttempt" class="button button-primary" type="button">Check answer</button><button id="modalShowSolution" class="button button-secondary" type="button">Review solution</button></div><div class="modal-solution" id="modalSolution" hidden></div></dialog>
+</body></html>

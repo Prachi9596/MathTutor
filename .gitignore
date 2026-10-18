@@ -1,0 +1,16 @@
+# CROHME source data is user-provided and must remain local.
+data/raw/
+
+# Local training outputs and generated caches.
+artifacts/
+checkpoints/
+outputs/
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+*.py[cod]
+*.pt
+*.pth
+
+# Local API credentials.
+.env
